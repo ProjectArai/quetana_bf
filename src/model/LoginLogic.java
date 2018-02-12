@@ -41,4 +41,22 @@ public class LoginLogic {
 		return mapUserInfo;
 	}
 
+	public static Map setLoginUserInfo(Map mapUserInfo) {
+
+		String idUser = (String)mapUserInfo.get("idUser");
+		String stUserName = (String)mapUserInfo.get("stUserName");
+		int nmAge = (int)mapUserInfo.get("nmAge");
+		int nmAddYear = (int)mapUserInfo.get("nmAddYear");
+		String stPart = (String)mapUserInfo.get("stPart");
+		String stFBand = (String)mapUserInfo.get("stFBand");
+		String stFGenre = (String)mapUserInfo.get("stFGenre");
+		String stIconURL = (String)mapUserInfo.get("stIconURL");
+		String stVideoURL = (String)mapUserInfo.get("stVideoURL");
+		String stComment = (String)mapUserInfo.get("stComment");
+
+		UserInfoBean userInfo =  new UserInfoBean(idUser, stUserName, nmAge, nmAddYear, stPart, stFBand, stFGenre, stIconURL, stVideoURL, stComment) ;
+
+		return userInfo;
+	}
 }
+
