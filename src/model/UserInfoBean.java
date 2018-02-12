@@ -1,5 +1,5 @@
 package model;
-
+//テスト
 public class UserInfoBean {
 	private String stMailAddress; //メールアドレス
 	private String stPassword; //パスワード
