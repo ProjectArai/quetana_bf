@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.LoginLogic;
+import model.UserInfoBean;
 
 /**
  * Servlet implementation class LoginServlet
@@ -65,6 +66,10 @@ public class LoginServlet extends HttpServlet {
 
 			//Login
 			Map mapUserInfo = LoginLogic.getLoginUserInfo(idLoginUse);
+
+			//UserInfoBeanインスタンス（ログイン情報）の作成
+			UserInfoBean userInfo = new UserInfoBean();
+			userInfo = mapUserInfo;
 
 			//ユーザ情報をセッションスコープに保存;
 			HttpSession session = request.getSession();
