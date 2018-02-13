@@ -5,8 +5,8 @@ public class UserInfoBean {
 	private String stPassword; //パスワード
 	private String idUser;     //ユーザID
 	private String stUserName; //名前
-	private int    nmAge;      //年齢
-	private int    nmAddYear;  //入学年
+	private String nmAge;      //年齢
+	private String nmAddYear;  //入学年
 	private String stPart;     //担当パート
 	private String stFBand;    //好きなバンド
 	private String stFGenre;   //好きなジャンル
@@ -23,7 +23,7 @@ public class UserInfoBean {
 		this.stPassword    = stPassword;
 	}
 
-	public UserInfoBean(String idUser, String stUserName, int nmAge, int nmAddYear, String stPart, String stFBand, String stFGenre, String stIconURL, String stVideoURL, String stComment) {
+	public UserInfoBean(String idUser, String stUserName, String nmAge, String nmAddYear, String stPart, String stFBand, String stFGenre, String stIconURL, String stVideoURL, String stComment) {
 		this.idUser     = idUser;
 		this.stUserName = stUserName;
 		this.nmAge      = nmAge;
@@ -52,19 +52,19 @@ public class UserInfoBean {
 		this.stUserName = stUserName;
 	}
 
-	public int getNmAge() {
+	public String getNmAge() {
 		return nmAge;
 	}
 
-	public void setNmAge(int nmAge) {
+	public void setNmAge(String nmAge) {
 		this.nmAge = nmAge;
 	}
 
-	public int getNmAddYear() {
+	public String getNmAddYear() {
 		return nmAddYear;
 	}
 
-	public void setNmAddYear(int nmAddYear) {
+	public void setNmAddYear(String nmAddYear) {
 		this.nmAddYear = nmAddYear;
 	}
 

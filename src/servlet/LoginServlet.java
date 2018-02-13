@@ -69,11 +69,11 @@ public class LoginServlet extends HttpServlet {
 
 			//UserInfoBeanインスタンス（ログイン情報）の作成
 			UserInfoBean userInfo = new UserInfoBean();
-			userInfo = mapUserInfo;
+			userInfo = LoginLogic.setLoginUserInfo(mapUserInfo);
 
 			//ユーザ情報をセッションスコープに保存;
 			HttpSession session = request.getSession();
-			session.setAttribute("userInfo", mapUserInfo);
+			session.setAttribute("userInfo", userInfo);
 //			HttpSession session = request.getSession();
 //			session.setAttribute("stMailAddress", loginInfo);
 
