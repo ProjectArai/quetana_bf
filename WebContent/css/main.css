@@ -1,6 +1,5 @@
-* {
-  margin: 0px;
-  padding: 0px;
+*{
+  margin:0;
 }
 a:link{
   color: #1e90ff;
@@ -11,21 +10,75 @@ a:hover{
 body {
   background: #eeeeee;
   font-family: Meiryo;
-  font-size:12px;
+  font-size:11px;
+}
+/*
+ * ヘッダーの要素
+ */
+.Logo{
+  float:left;
+  padding:5px 35px;
+  width: 80px;
+  height: 40px;
+  background-color: #696969;
+  color: #FFFFFF;
+  font-size:20pt;
+}
+.Menu{
+  float:right;
+  padding:5px 15px;
+  width:20px;
+  height: 40px;
+  background-color: #696969;
+  color: #FFFFFF;
+  font-size:20pt;
+}
+.LoginUser{
+  float:right;
+  padding:10px;
+  width:100px;
+  height: 30px;
+  background-color: #0000FF;
+  overflow:hidden;
+}
+.Username{
+  float:right;
+  padding:7px 0px;
+  width:70px;
+  height:16px;
+  background-color: #FF0000;
+  text-align: center;
+}
+.Icon{
+  float:right;
+  width:30px;
+  height: 30px;
+  background-color: #00FF00;
 }
 .Header {
   position:fixed;
   width: 100%;                /* ヘッダーの横幅を指定する */
-  height: 45px;               /* ヘッダーの高さを指定する */
+  height: 50px;               /* ヘッダーの高さを指定する */
   background-color: #fa8072;  /* ヘッダーの背景色を指定する */
   color: #000000;             /* フォントの色を指定する */
 }
-.Contents {
+.HiddenHeader{
+  overflow: auto; /* コンテンツの表示を自動に設定（スクロール） */
   width: 100%;    /* コンテンツの横幅を指定する */
+  height: 100px;               /* ヘッダーの高さを指定する */
+  background: #000000;
+}
+
+/*
+ * コンテンツの要素
+ */
+.Contents {
+  width: 95%;    /* コンテンツの横幅を指定する */
   overflow: auto; /* コンテンツの表示を自動に設定（スクロール） */
   align: center;
   background: #ffffff;
   text-align: center;
+  margin: auto;
 }
 table#main_tbl {
   border-style: none;
@@ -59,5 +112,5 @@ input#submit_btn {
   border-style: none;
 }
 input#submit_btn:hover {
-    background: #ffa07a;
+  background: #ffa07a;
 }

@@ -41,12 +41,12 @@ public class LoginLogic {
 		return mapUserInfo;
 	}
 
-	public static Map setLoginUserInfo(Map mapUserInfo) {
+	public static UserInfoBean setLoginUserInfo(Map mapUserInfo) {
 
 		String idUser = (String)mapUserInfo.get("idUser");
 		String stUserName = (String)mapUserInfo.get("stUserName");
-		int nmAge = (int)mapUserInfo.get("nmAge");
-		int nmAddYear = (int)mapUserInfo.get("nmAddYear");
+		String nmAge = (String)mapUserInfo.get("nmAge");
+		String nmAddYear = (String)mapUserInfo.get("nmAddYear");
 		String stPart = (String)mapUserInfo.get("stPart");
 		String stFBand = (String)mapUserInfo.get("stFBand");
 		String stFGenre = (String)mapUserInfo.get("stFGenre");

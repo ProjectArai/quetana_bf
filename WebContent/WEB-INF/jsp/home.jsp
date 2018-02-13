@@ -5,27 +5,18 @@
 //セッションスコープからユーザ情報を取得
 UserInfoBean userInfo = (UserInfoBean) session.getAttribute("userInfo");
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <title>Quetana</title>
 <link rel="stylesheet" type="text/css" href="/quetana/css/main.css">
+<link rel="stylesheet" type="text/css" href="/quetana/css/menu.css">
 </head>
 <body>
-<div class="Header"><font color="#FFFFFF" size="5"></font>
-<table width="100%" border="1">
-<tr>
-<td align="center" width="150px"><font color="#FFFFFF" size="5">Quetana</font></td>
-<td></td>
-<td align="center"  width="100px" style="vertical-align:middle;"><img src="/quetana/img/r-zoon.png" width="20" height="20"><%= userInfo.getIdUser() %></td>
-<td align="center"  width="50px">三</td>
-</tr>
-</table>
-</div>
+<jsp:include page="../jsp/parts/header.jsp" flush="true" />
 <div class="Contents" id="main_div">
-<font size="6" ><br></font>
 <table id="main_tbl" border="1">
 <tr><td align="left"><font color="#FFFFFF" size="3">タイムライン</font></td></tr>
 <tr><td align="center">
