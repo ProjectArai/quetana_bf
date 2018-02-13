@@ -16,13 +16,13 @@ body {
  * ヘッダーの要素
  */
 .Logo{
-  float:left;
-  padding:5px 35px;
+  float: left;
+  padding: 5px 35px;
   width: 80px;
   height: 40px;
   background-color: #696969;
   color: #FFFFFF;
-  font-size:20pt;
+  font-size: 20pt;
 }
 .Menu{
   float:right;
@@ -67,6 +67,15 @@ body {
   width: 100%;    /* コンテンツの横幅を指定する */
   height: 100px;               /* ヘッダーの高さを指定する */
   background: #000000;
+}
+.menubutton{
+  padding:10px 0px;
+  text-align: center;
+  width: 250px;
+  height: 30px;
+  background-color: #00FF00;  /* ヘッダーの背景色を指定する */
+  color: #000000;
+  font-size:14pt;
 }
 
 /*

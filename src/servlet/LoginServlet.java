@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -46,17 +45,18 @@ public class LoginServlet extends HttpServlet {
 
 		//リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
-		String stMailAddress = request.getParameter("stMailAddress");
+		String stLoginUser = request.getParameter("stLoginUser");
 		String stPassword = request.getParameter("stPassword");
 
 		//LoginBeanインスタンス（ログイン情報）の作成
 //		LoginBean loginInfo = new LoginBean(stMailAddress, stPassword);
 
 		//ログインユーザを取得
-		String idLoginUse = LoginLogic.getLoginUserID(stMailAddress, stPassword);
+//		UserInfoBean userInfo =  new UserInfoBean();
+		UserInfoBean userInfo = LoginLogic.getLoginUserInfo(stLoginUser, stPassword);
 
 		//ログイン判定（ユーザIDが空の場合はエラー）
-		if(idLoginUse.equals("")) {
+		if(userInfo.getIdUser().equals("")) {
 
 			//ログイン画面にエラーメッセージを表示
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/");
@@ -64,12 +64,12 @@ public class LoginServlet extends HttpServlet {
 
 		} else {
 
-			//Login
-			Map mapUserInfo = LoginLogic.getLoginUserInfo(idLoginUse);
-
-			//UserInfoBeanインスタンス（ログイン情報）の作成
-			UserInfoBean userInfo = new UserInfoBean();
-			userInfo = LoginLogic.setLoginUserInfo(mapUserInfo);
+//			//Login
+//			Map mapUserInfo = LoginLogic.getLoginUserInfo(idLoginUser);
+//
+//			//UserInfoBeanインスタンス（ログイン情報）の作成
+//			UserInfoBean userInfoA = new UserInfoBean();
+//			userInfoA = LoginLogic.setLoginUserInfo(mapUserInfo);
 
 			//ユーザ情報をセッションスコープに保存;
 			HttpSession session = request.getSession();
@@ -83,5 +83,4 @@ public class LoginServlet extends HttpServlet {
 
 		}
 	}
-
 }

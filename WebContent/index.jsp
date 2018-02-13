@@ -25,7 +25,7 @@
 <tr><td align="center">
 <form action="/quetana/Login" method="post">
 <ul>
-<li class="mailaddress"><input type="text" name="stMailAddress" maxlength="512" placeholder="メールアドレス"></li>
+<li class="mailaddress"><input type="text" name="stLoginUser" maxlength="512" placeholder="ユーザ名 または メールアドレス"></li>
 <li class="password"><input type="text" name="stPassword" size="30" maxlength="16"  placeholder="パスワード"></li>
 <li class="login"><input id="submit_btn" type="submit" id="button" name="login" size="10" value="ログイン"></li>
 </ul>

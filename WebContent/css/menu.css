@@ -25,13 +25,12 @@
 #nav-content {
   overflow: auto;
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 50px;
+  right: 0px;
   z-index: 9999;/*最前面に*/
-  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
-  max-width: 150px;/*最大幅（調整してください）*/
-  height: 300px;
-  background: #fff;/*背景色*/
+  width: 250px;/*最大幅（調整してください）*/
+  height: 150px;
+  background: #DDDDDD;/*背景色*/
   transition: .3s ease-in-out;/*滑らかに表示*/
   -webkit-transform: translateX(105%);
   transform: translateX(105%);/*左に隠しておく*/
@@ -45,6 +44,6 @@
 
 #nav-input:checked ~ #nav-content {
   -webkit-transform: translateX(0%);
-  transform: translateX(0%);/*中身を表示（右へスライド）*/
-  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  transform: translateX(0%);/*中身を表示（左へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,10,10);
 }

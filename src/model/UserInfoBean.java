@@ -18,9 +18,12 @@ public class UserInfoBean {
 		//何もなし
 	}
 
-	public UserInfoBean(String stMailAddress, String stPassword) {
+	public UserInfoBean(String idUser, String stUserName, String stMailAddress, String stPassword, String stIconURL) {
+		this.idUser     = idUser;
+		this.stUserName = stUserName;
 		this.stMailAddress = stMailAddress;
 		this.stPassword    = stPassword;
+		this.stIconURL  = stIconURL;
 	}
 
 	public UserInfoBean(String idUser, String stUserName, String nmAge, String nmAddYear, String stPart, String stFBand, String stFGenre, String stIconURL, String stVideoURL, String stComment) {
