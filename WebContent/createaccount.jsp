@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Quetana - アカウント作成</title>
+<title>8tana - アカウント作成</title>
 </head>
 <body>
 <h1>アカウント作成画面</h1>
