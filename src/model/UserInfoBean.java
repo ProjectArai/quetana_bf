@@ -1,39 +1,22 @@
 package model;
 
 public class UserInfoBean {
-	private String stMailAddress; //メールアドレス
-	private String stPassword; //パスワード
 	private String idUser;     //ユーザID
 	private String stUserName; //名前
-	private String nmAge;      //年齢
-	private String nmAddYear;  //入学年
-	private String stPart;     //担当パート
-	private String stFBand;    //好きなバンド
-	private String stFGenre;   //好きなジャンル
+	private String stPassword; //パスワード
+	private String stMailAddress; //メールアドレス
 	private String stIconURL;  //アイコンURL
-	private String stVideoURL; //動画URL
-	private String stComment;  //コメント
 
 	public UserInfoBean() {
 		//何もなし
 	}
 
-	public UserInfoBean(String stMailAddress, String stPassword) {
-		this.stMailAddress = stMailAddress;
-		this.stPassword    = stPassword;
-	}
-
-	public UserInfoBean(String idUser, String stUserName, String nmAge, String nmAddYear, String stPart, String stFBand, String stFGenre, String stIconURL, String stVideoURL, String stComment) {
+	public UserInfoBean(String idUser, String stUserName, String stPassword, String stMailAddress, String stIconURL) {
 		this.idUser     = idUser;
 		this.stUserName = stUserName;
-		this.nmAge      = nmAge;
-		this.nmAddYear  = nmAddYear;
-		this.stPart     = stPart;
-		this.stFBand    = stFBand;
-		this.stFGenre   = stFGenre;
+		this.stPassword    = stPassword;
+		this.stMailAddress = stMailAddress;
 		this.stIconURL  = stIconURL;
-		this.stVideoURL = stVideoURL;
-		this.stComment  = stComment;
 	}
 
 	public String getIdUser() {
@@ -52,60 +35,12 @@ public class UserInfoBean {
 		this.stUserName = stUserName;
 	}
 
-	public String getNmAge() {
-		return nmAge;
+	public String getStPassword() {
+		return stPassword;
 	}
 
-	public void setNmAge(String nmAge) {
-		this.nmAge = nmAge;
-	}
-
-	public String getNmAddYear() {
-		return nmAddYear;
-	}
-
-	public void setNmAddYear(String nmAddYear) {
-		this.nmAddYear = nmAddYear;
-	}
-
-	public String getStPart() {
-		return stPart;
-	}
-
-	public void setStPart(String stPart) {
-		this.stPart = stPart;
-	}
-
-	public String getStFBand() {
-		return stFBand;
-	}
-
-	public void setStFBand(String stFBand) {
-		this.stFBand = stFBand;
-	}
-
-	public String getStFGenre() {
-		return stFGenre;
-	}
-
-	public void setStFGenre(String stFGenre) {
-		this.stFGenre = stFGenre;
-	}
-
-	public String getStIconURL() {
-		return stIconURL;
-	}
-
-	public void setStIconURL(String stIconURL) {
-		this.stIconURL = stIconURL;
-	}
-
-	public String getStVideoURL() {
-		return stVideoURL;
-	}
-
-	public void setStVideoURL(String stVideoURL) {
-		this.stVideoURL = stVideoURL;
+	public void setStPassword(String stPassword) {
+		this.stPassword = stPassword;
 	}
 
 	public String getStMailAddress() {
@@ -116,20 +51,12 @@ public class UserInfoBean {
 		this.stMailAddress = stMailAddress;
 	}
 
-	public String getStComment() {
-		return stComment;
+	public String getStIconURL() {
+		return stIconURL;
 	}
 
-	public void setStComment(String stComment) {
-		this.stComment = stComment;
-	}
-
-	public String getStPassword() {
-		return stPassword;
-	}
-
-	public void setStPassword(String stPassword) {
-		this.stPassword = stPassword;
+	public void setStIconURL(String stIconURL) {
+		this.stIconURL = stIconURL;
 	}
 
 }

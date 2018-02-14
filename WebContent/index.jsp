@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <title>Quetana</title>
 <link rel="stylesheet" type="text/css" href="/quetana/css/top.css">
@@ -25,7 +25,7 @@
 <tr><td align="center">
 <form action="/quetana/Login" method="post">
 <ul>
-<li class="mailaddress"><input type="text" name="stMailAddress" maxlength="512" placeholder="メールアドレス"></li>
+<li class="mailaddress"><input type="text" name="stLoginUser" maxlength="512" placeholder="ユーザ名 または メールアドレス"></li>
 <li class="password"><input type="text" name="stPassword" size="30" maxlength="16"  placeholder="パスワード"></li>
 <li class="login"><input id="submit_btn" type="submit" id="button" name="login" size="10" value="ログイン"></li>
 </ul>

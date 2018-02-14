@@ -1,5 +1,6 @@
 package model;
 
+//ボツ
 public class LoginBean {
 	private String stMailAddress; //メールアドレス
 	private String stPassword;    //パスワード

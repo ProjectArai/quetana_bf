@@ -1,29 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.UserInfoBean" %>
+<%@ page import="model.UserInfoBean,model.TimeLineBean,java.util.List" %>
 <%
 //セッションスコープからユーザ情報を取得
 UserInfoBean userInfo = (UserInfoBean) session.getAttribute("userInfo");
+//リクエストスコープからタイムラインを取得
+List<TimeLineBean> arrTimeLine = (List<TimeLineBean>) request.getAttribute("arrTimeLine");
+TimeLineBean timeLine = new TimeLineBean();
+timeLine = (TimeLineBean) arrTimeLine.get(1);
 %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>Quetana</title>
-<link rel="stylesheet" type="text/css" href="/quetana/css/main.css">
-<link rel="stylesheet" type="text/css" href="/quetana/css/menu.css">
-</head>
-<body>
-<jsp:include page="../jsp/parts/header.jsp" flush="true" />
-<div class="Contents" id="main_div">
-<table id="main_tbl" border="1">
-<tr><td align="left"><font color="#FFFFFF" size="3">タイムライン</font></td></tr>
-<tr><td align="center">
-<input id="submit_btn" type="submit" id="button" name="all" value="すべて">
-<input id="submit_btn" type="submit" id="button" name="event" value="ライブ/イベント">
-<input id="submit_btn" type="submit" id="button" name="member" value="メンバー募集">
-</td></tr>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Quetana</title>
+		<link rel="stylesheet" type="text/css" href="/quetana/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/quetana/css/menu.css">
+	</head>
+	<body>
+		<jsp:include page="../jsp/parts/mainheader.jsp" flush="true" />
+		<div class="Contents" id="main_div">
+			<table id="main_tbl" border="1">
+				<tr><td align="left">
+					<font color="#FFFFFF" size="3">タイムライン</font>
+				</td></tr>
+				<tr><td align="center">
+					<input id="submit_btn" type="submit" id="button" name="all" value="すべて">
+					<input id="submit_btn" type="submit" id="button" name="event" value="ライブ/イベント">
+					<input id="submit_btn" type="submit" id="button" name="member" value="メンバー募集">
+				</td></tr>
+				<tr><td align="center" bgcolor="#FFFFFF">
+					<br>
+						<%
+							for (int i = 0; i < 4; i++) {
+								
+							}
+						%>
+					<br>
+				</td></tr>
 <tr><td align="center" bgcolor="#FFFFFF">
 <table id="post_tbl" border="1">
 <tr>
@@ -42,7 +57,7 @@ OB/OGの方も、現役のみんなも、ごちゃまぜのライ</td></tr>
 <table id="post_tbl" border="1">
 <tr>
 <td rowspan="2" width="15%">アイコン</td>
-<td width="85%">メンバー募集</td>
+<td width="85%"><%= timeLine.getStUserName() %></td>
 </tr>
 <tr><td width="85%">kazzool</td></tr>
 <tr><td colspan="2">Beatles（コピー）のメンバーを探しています！</td></tr>

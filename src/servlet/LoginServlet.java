@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,22 +40,17 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		doGet(request, response);
 
 		//リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
-		String stMailAddress = request.getParameter("stMailAddress");
+		String stLoginUser = request.getParameter("stLoginUser");
 		String stPassword = request.getParameter("stPassword");
 
-		//LoginBeanインスタンス（ログイン情報）の作成
-//		LoginBean loginInfo = new LoginBean(stMailAddress, stPassword);
-
 		//ログインユーザを取得
-		String idLoginUse = LoginLogic.getLoginUserID(stMailAddress, stPassword);
+		UserInfoBean loginUserInfo = LoginLogic.getLoginUserInfo(stLoginUser, stPassword);
 
 		//ログイン判定（ユーザIDが空の場合はエラー）
-		if(idLoginUse.equals("")) {
+		if(loginUserInfo.getIdUser().equals("")) {
 
 			//ログイン画面にエラーメッセージを表示
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/");
@@ -64,18 +58,9 @@ public class LoginServlet extends HttpServlet {
 
 		} else {
 
-			//Login
-			Map mapUserInfo = LoginLogic.getLoginUserInfo(idLoginUse);
-
-			//UserInfoBeanインスタンス（ログイン情報）の作成
-			UserInfoBean userInfo = new UserInfoBean();
-			userInfo = LoginLogic.setLoginUserInfo(mapUserInfo);
-
-			//ユーザ情報をセッションスコープに保存;
+			//ユーザ情報をセッションスコープに保存
 			HttpSession session = request.getSession();
-			session.setAttribute("userInfo", userInfo);
-//			HttpSession session = request.getSession();
-//			session.setAttribute("stMailAddress", loginInfo);
+			session.setAttribute("userInfo", loginUserInfo);
 
 			//ホーム画面に遷移
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/Home");
@@ -83,5 +68,4 @@ public class LoginServlet extends HttpServlet {
 
 		}
 	}
-
 }
