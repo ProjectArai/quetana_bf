@@ -1,23 +1,30 @@
 package dao;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.TimeLineBean;
 
 public class TimeLineDao {
 
-	public Map getTimeLineInfo(String stMailAddress) {
+	public static List<TimeLineBean> getTimeLineInfo() {
 
-		Map<String, String> mapTimeLineInfo = new HashMap<>();
+		List<TimeLineBean> arrTimeLineInfo = new ArrayList<TimeLineBean>();
 
-		if(stMailAddress.equals("ryota.maezono@gmail.com")) {
-			mapTimeLineInfo.put("idUser", "Z001");
-			mapTimeLineInfo.put("stPassword", "ryota1229");
-		} else {
-			mapTimeLineInfo.put("idUser", "");
-			mapTimeLineInfo.put("stPassword", "");
-		}
+		//テストデータ
+		TimeLineBean timeLine1 = new TimeLineBean("Z000001E", "Z001", "r-zoon", "OB/OGライブ 2018", "E");
+		arrTimeLineInfo.add(timeLine1);
 
-		return mapTimeLineInfo;
+		TimeLineBean timeLine2 = new TimeLineBean("Z000002M", "Z002", "kazzool", "Beatles（コピー）のメンバーを探しています！", "M");
+		arrTimeLineInfo.add(timeLine2);
+
+		TimeLineBean timeLine3 = new TimeLineBean("Z000003E", "Z001", "r-zoon", "OB/OGライブ 2018", "E");
+		arrTimeLineInfo.add(timeLine3);
+
+		TimeLineBean timeLine4 = new TimeLineBean("Z000004M", "Z002", "kazzool", "Beatles（コピー）のメンバーを探しています！", "M");
+		arrTimeLineInfo.add(timeLine4);
+
+		return arrTimeLineInfo;
 	}
 
 }

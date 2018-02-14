@@ -40,23 +40,17 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		doGet(request, response);
 
 		//リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
 		String stLoginUser = request.getParameter("stLoginUser");
 		String stPassword = request.getParameter("stPassword");
 
-		//LoginBeanインスタンス（ログイン情報）の作成
-//		LoginBean loginInfo = new LoginBean(stMailAddress, stPassword);
-
 		//ログインユーザを取得
-//		UserInfoBean userInfo =  new UserInfoBean();
-		UserInfoBean userInfo = LoginLogic.getLoginUserInfo(stLoginUser, stPassword);
+		UserInfoBean loginUserInfo = LoginLogic.getLoginUserInfo(stLoginUser, stPassword);
 
 		//ログイン判定（ユーザIDが空の場合はエラー）
-		if(userInfo.getIdUser().equals("")) {
+		if(loginUserInfo.getIdUser().equals("")) {
 
 			//ログイン画面にエラーメッセージを表示
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/");
@@ -64,18 +58,9 @@ public class LoginServlet extends HttpServlet {
 
 		} else {
 
-//			//Login
-//			Map mapUserInfo = LoginLogic.getLoginUserInfo(idLoginUser);
-//
-//			//UserInfoBeanインスタンス（ログイン情報）の作成
-//			UserInfoBean userInfoA = new UserInfoBean();
-//			userInfoA = LoginLogic.setLoginUserInfo(mapUserInfo);
-
-			//ユーザ情報をセッションスコープに保存;
+			//ユーザ情報をセッションスコープに保存
 			HttpSession session = request.getSession();
-			session.setAttribute("userInfo", userInfo);
-//			HttpSession session = request.getSession();
-//			session.setAttribute("stMailAddress", loginInfo);
+			session.setAttribute("userInfo", loginUserInfo);
 
 			//ホーム画面に遷移
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/Home");

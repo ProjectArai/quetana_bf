@@ -11,13 +11,13 @@ public class LoginDao {
 
 		if(stLoginUser.equals("r-zoon")||stLoginUser.equals("ryota.maezono@gmail.com")) {
 			mapLoginInfo.put("idUser", "Z001");
-			mapLoginInfo.put("stUsername", "r-zoon");
+			mapLoginInfo.put("stUserName", "r-zoon");
 			mapLoginInfo.put("stPassword", "ryota1229");
 			mapLoginInfo.put("stMailAddress", "ryota.maezono@gmail.com");
 			mapLoginInfo.put("stIconURL", "/quetana/img/r-zoon.png");
 		} else {
 			mapLoginInfo.put("idUser", "");
-			mapLoginInfo.put("stUsername", "");
+			mapLoginInfo.put("stUserName", "");
 			mapLoginInfo.put("stPassword", "");
 			mapLoginInfo.put("stMailAddress", "");
 			mapLoginInfo.put("stIconURL", "");

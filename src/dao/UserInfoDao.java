@@ -3,6 +3,7 @@ package dao;
 import java.util.HashMap;
 import java.util.Map;
 
+//ボツ
 public class UserInfoDao {
 
 	public Map getUserInfo(String idUser) {

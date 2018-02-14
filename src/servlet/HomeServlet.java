@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.ViewTimeLine;
+
 /**
  * Servlet implementation class HomeServlet
  */
@@ -37,9 +39,10 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		//タイムラインを取得し、リクエストスコープに保存
+		request.setAttribute("arrTimeLine", ViewTimeLine.getTimeLineList());
 
-
-		//とりあえずホーム画面に遷移
+		//ホーム画面に遷移
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
 		dispatcher.forward(request, response);
 	}
